@@ -1,7 +1,11 @@
 {
   "name": "UnsecuredAPIKeys Development",
-  "dockerComposeFile": "docker-compose.yml",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
   "service": "workspace",
+  "dockerComposeFile": "docker-compose.yml",
   "workspaceFolder": "/workspace",
   "forwardPorts": [3000, 7227, 5432],
   "portsAttributes": {
@@ -26,11 +30,11 @@
         "ms-dotnettools.csdevkit",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "ms-azuretools.vscode-docker",
-        "cweijan.vscode-postgresql-client2"
+        "ms-azuretools.vscode-docker"
       ],
       "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
+        "dotnetAcquisitionExtension.sharedExistingDotnetPath": "/usr/share/dotnet/dotnet",
+        "omnisharp.useModernNet": true
       }
     }
   },
